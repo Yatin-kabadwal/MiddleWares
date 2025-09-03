@@ -37,11 +37,12 @@ const aut = function(req, res, next){
         next();
     }
 
-    else {
+
+    else{
         //if there is no valid user then 
         res.json({
-            success:false,
-            message: "NOt a valid user",
+            success: false,
+            message:"Not a valid user"
         })
     }
 }
@@ -52,7 +53,6 @@ const isStudent = function(req, res, next){
     if(req.user.role == "student"){
         next();
     }
-
     else{
         res.json({
             success: false,
