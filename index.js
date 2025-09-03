@@ -8,31 +8,36 @@ const port = 3000
 //loading middleware into the app
 //inbuild middleware
 app.use(express.json());
-express.json()
+// express.json()
 
-//middleware - logging, auth, validation
+// //middleware - logging, auth, validation
 
-//Creation of middleware using the demon 
-const loggingMiddleware = function(req,res, next){
-    console.log("Login krr rha hu mai!")
-   // res.send("Let's gooooo!")
-   next();
-}
+// //Creation of middleware using the demon 
+// const loggingMiddleware = function(req,res, next){
+//     console.log("Login krr rha hu mai!")
+//    // res.send("Let's gooooo!")
+//    next();
+// }
 
-//Loading middleware into application
- app.use(loggingMiddleware);
+// //Loading middleware into application
+//  app.use(loggingMiddleware);
 
-const authMiddleware = function(req, res, next){
-    console.log("Currently I'm doing the Authentication!");
-    next();
-}
-app.use(authMiddleware);
+// const authMiddleware = function(req, res, next){
+//     console.log("Currently I'm doing the Authentication!");
+//     next();
+// }
+// app.use(authMiddleware);
 
-const validationMiddleware = function(req, res, next){
-    console.log("Currently I'm doing the validation!");
-    next();
-} 
-app.use(validationMiddleware);
+// const validationMiddleware = function(req, res, next){
+//     console.log("Currently I'm doing the validation!");
+//     next();
+// } 
+// app.use(validationMiddleware);
+
+const route = require('./routes/routes')
+
+//Mounting the routes
+app.use("/api", route)
 
 app.get('/', (req, res)=>{
 
