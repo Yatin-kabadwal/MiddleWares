@@ -15,8 +15,11 @@ express.json()
 //Creation of middleware using the demon 
 const loggingMiddleware = function(req,res, next){
     console.log("Login krr rha hu mai!")
-    next();
+   // res.send("Let's gooooo!")
+   next();
 }
+
+//Loading middleware into application
  app.use(loggingMiddleware);
 
 const authMiddleware = function(req, res, next){
