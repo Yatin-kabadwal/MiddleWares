@@ -50,8 +50,9 @@ const aut = function(req, res, next){
 const isStudent = function(req, res, next){
     console.log("I'm inside student's middlewar!")
 
-    if(req.user.role == "student"){
+    if(req.user.role ==  "student"){
         next();
+    
     }
     else{
         res.json({
