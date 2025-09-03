@@ -12,6 +12,7 @@ express.json()
 
 //middleware - logging, auth, validation
 
+//Creation of middleware using the demon 
 const loggingMiddleware = function(req,res, next){
     console.log("Login krr rha hu mai!")
     next();
